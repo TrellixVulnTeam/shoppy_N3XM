@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT app:app
+worker: python model12.py $PORT
