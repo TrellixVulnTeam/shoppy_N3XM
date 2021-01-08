@@ -58,6 +58,7 @@ def item_buy(id):
         "currency": "USD" ,
         "amount": item.price + 00
     }
+
     url = checkout.url(data).get('checkout_url')
     return redirect(url)
 
