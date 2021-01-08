@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Cart page</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Inside cart</h1>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  {% for element in data %}
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">{{ element.title }}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ element.price }} <small class="text-muted">$</small></h1>
+         <p class="card-text">{{ element.desc }}</p>
+        <a href="/buy/{{ element.id }}" class="btn btn-success">Buy</a>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
